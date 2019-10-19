@@ -51,10 +51,8 @@ end
 gem 'graphql'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-
 gem 'graphiql-rails', group: :development
 
 gem 'faker'
 gem 'rack-cors'
 gem 'rubocop', '~> 0.75.1', require: false
-
