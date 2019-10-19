@@ -4,6 +4,11 @@ class GraphqlController < ApplicationController
   # but you'll have to authenticate your user separately
   protect_from_forgery with: :null_session
 
+  # API モードでないと以下のエラーが出るのでその対応
+  # Can't verify CSRF token authenticity.
+  # see https://qiita.com/nishina555/items/4ffaf5cc57a384b66230
+  skip_before_action :verify_authenticity_token
+
   def execute
     variables = ensure_hash(params[:variables])
     query = params[:query]
