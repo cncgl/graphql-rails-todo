@@ -1,30 +1,22 @@
 # graphql-rails-todo
 
 GraphQL sample with Ruby on Rails
-[![Actions Status](https://github.com/{owner}/{repo}/workflows/{workflow_name}/badge.svg)](https://github.com/{owner}/{repo}/actions)
+
+[![Actions Status](https://github.com/cncgl/graphql-rails-todo/workflows/CI/badge.svg)](https://github.com/cncgl/graphql-rails-todo/actions)
 
 [![Gem Version](https://badge.fury.io/rb/rails.svg)](https://badge.fury.io/rb/rails)
 [![Gem Version](https://badge.fury.io/rb/graphql.svg)](https://badge.fury.io/rb/graphql)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## build
 
-Things you may want to cover:
+```shell
+$ bundle install --path vendor/bundle
+$ bundle exec rails db:create db:migrate db:seed
+```
 
-* Ruby version
+## execute
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+$ bundle exec rails s
+```
+Open with browser http://localhost:3000/graphiql
