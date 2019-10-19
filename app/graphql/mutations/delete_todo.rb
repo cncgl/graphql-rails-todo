@@ -9,7 +9,7 @@ module Mutations
     field :result, Boolean, null: true
 
     # 入力フィールド
-    argument :id, ID, '削除するTodo ID',required: true
+    argument :id, ID, '削除するTodo ID', required: true
 
     # リゾルバー
     def resolve(**args)
