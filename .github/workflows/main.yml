@@ -15,7 +15,7 @@ jobs:
           version: 2.6.x
       - name: Build
         run: |
-          sudo apt-get install ruby-dev build-essential
+          sudo apt-get install ruby-dev build-essential sqlite3 libsqlite3-dev
           gem install bundler
           bundle install --jobs 4 --retry 3
       - name: lint
