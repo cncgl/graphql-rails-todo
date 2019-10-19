@@ -53,3 +53,4 @@ gem 'graphql'
 gem 'graphiql-rails', group: :development
 
 gem 'faker'
+gem 'rack-cors'
