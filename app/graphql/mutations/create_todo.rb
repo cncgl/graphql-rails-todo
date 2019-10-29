@@ -11,12 +11,16 @@ module Mutations
     # 入力フィールドの定義
     argument :title, String, '作成するTodo　タイトル', required: false
 
-    # リソzルバー
+    # リゾルバー
     def resolve(**args)
       todo = Todo.create(
         title: args[:title],
         completed: false
       )
+      # Todoを作成したときに通知する
+      # サブスクリプションタイプのフィールド、引数、ルートオブジェクト、スコープ
+      GraphqlRailsSchema.subscriptions.trigger('todoCreated', {}, todo)
+      # render status: :created
       {
         todo: todo,
         result: todo.errors.blank?
